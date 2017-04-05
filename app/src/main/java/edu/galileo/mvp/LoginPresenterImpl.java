@@ -2,7 +2,7 @@ package edu.galileo.mvp;
 
 import android.text.TextUtils;
 
-public class LoginPresenterImpl implements LoginPresenter, LoginModel.OnLoginFinishedListener {
+public class LoginPresenterImpl implements LoginPresenter {
 
     private LoginView loginView;
     private LoginModel loginModel;
@@ -30,24 +30,7 @@ public class LoginPresenterImpl implements LoginPresenter, LoginModel.OnLoginFin
         }
 
         loginView.showProgress(true);
-        loginModel.login(username, password, this);
-    }
-
-    @Override
-    public void onCanceled() {
-        loginView.showProgress(false);
-    }
-
-    @Override
-    public void onPasswordError() {
-        loginView.showProgress(false);
-        loginView.setPasswordError(R.string.error_incorrect_password);
-    }
-
-    @Override
-    public void onSuccess() {
-        loginView.showProgress(false);
-        loginView.successAction();
+        loginModel.login(username, password);
     }
 
     private boolean isEmailValid(String email) {
