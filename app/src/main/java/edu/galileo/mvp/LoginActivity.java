@@ -9,7 +9,10 @@ import android.view.View.OnClickListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 /**
  * A login screen that offers login via email/password.
@@ -28,6 +31,11 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Setup image with Glide
+        ImageView imageView = (ImageView) findViewById(R.id.image_test);
+        Glide.with(this).load("https://pbs.twimg.com/profile_images/616076655547682816/6gMRtQyY.jpg").into(imageView);
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
 
