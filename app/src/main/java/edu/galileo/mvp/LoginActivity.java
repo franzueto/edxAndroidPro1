@@ -23,8 +23,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     // UI references.
     @BindView(R.id.email) AutoCompleteTextView mEmailView;
     @BindView(R.id.password) EditText mPasswordView;
-    @BindView(R.id.login_form) View mProgressView;
-    @BindView(R.id.login_progress) View mLoginFormView;
+    @BindView(R.id.login_form) View mLoginFormView;
+    @BindView(R.id.login_progress) View mProgressView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
